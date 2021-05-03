@@ -6,12 +6,10 @@
 ### Projeto Agenda com backend em NodeJS e DB com MongoDB. Um CRUD básico com cadastro de usuário e senha recebidos
 ### Através de um formulário HTML e repassados para cadastro no Banco de Dados do mongoDB.
 
-<p align="center">
- <a href="#objetivo">Objetivo: Aprender a desenvolver com uma boa prática de progração a tecnologia NodeJS</a> •
- <a href="#tecnologias">Tecnologias</a> •
- <a href="#contribuicao">Contribuição</a> • 
- <a href="#licenc-a">Licença</a> • 
- <a href="#autor">Autor</a>
-</p>
+<h4 align="center"> 
+	🚧  NodeJS 🚀 Em construção...  🚧
+</h4>
 
-## Projeto em construção.
+- [x] Cadastro de usuário
+- [x] Cadastro de cliente
+- [ ] Cadastro de produtos
