@@ -11,5 +11,6 @@
 </h4>
 
 - [x] Cadastro de usuário
-- [x] Cadastro de cliente
+- [ ] Cadastro de cliente
 - [ ] Cadastro de produtos
+- [x] Cadastro no Banco de Dados
