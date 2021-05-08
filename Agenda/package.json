@@ -1,6 +1,5 @@
 {
-<<<<<<< HEAD
-  "name": "Agenda",
+  "name": "aula14",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -35,9 +34,5 @@
     "babel-loader": "^8.0.6",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.9"
-=======
-  "dependencies": {
-    "bcryptjs": "^2.4.3"
->>>>>>> f932447a0f6c1f73ac94a7115690245c0472aeb2
   }
 }
