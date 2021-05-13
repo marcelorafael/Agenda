@@ -6,7 +6,7 @@
         <div class="col-lg-2"></div>
         <div class="col-lg-8 my-3">
             <h1 class="text-center">Contato</h1>
-            <p>Crie ou edite seu contato abaixo</p>
+            
 
 
             <%- include('includes/messages') %>
@@ -14,8 +14,10 @@
              <div class="col-lg">
                 <h4>Login</h4>
                 <% if(contato._id) {%>
+                    <p>Editar contato.</p>
                     <form  action="/contato/edit/<%= contato._id %>" method="POST">
                 <% } else {%>
+                    <p>Cadastrar Contato.</p>
                     <form  action="/contato/register" method="POST">
                 <% } %>
                     <input type="hidden" name="_csrf" value=<%= csrfToken %>>
@@ -35,7 +37,11 @@
                         <label for="exampleInputEmail1" class="form-label">Telefone</label>
                         <input value="<%= contato.telefone %>" type="tel" class="form-control" name="telefone">
                     </div>
-                    <button type="submit" class="btn btn-primary">Entrar</button>
+                    <% if(contato._id) {%>
+                        <button type="submit" class="btn btn-primary">Editar</button>
+                    <%} else {%>
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                    <% } %>
                   </form>
             </div>
 
