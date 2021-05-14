@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const { default: validator } = require('validator');
+const { contato } = require('../controllers/contatoController');
 
 const ContatoSchema = new mongoose.Schema({
     nome: { type: String, required: true },
@@ -17,12 +18,7 @@ function Contato(body) {
     this.contato = null;
 }
 
-Contato.buscarPorId = async function (id) {
-    if(typeof id !== 'string') return;
-    const user = await ContatoModel.findById(id);
-    return user;
-}
-
+// Métodos não estáticos
 Contato.prototype.register = async function () {
     this.valida();
 
@@ -60,6 +56,19 @@ Contato.prototype.edit = async function (id) {
     this.valida();
     if(this.errors.length > 0)return;
     this.contato = await ContatoModel.findByIdAndUpdate(id, this.body, { new: true});
+}
+
+// Métodos estáticos
+Contato.buscarPorId = async function() {
+    if(typeof id !== 'string') return;
+    const contato = await ContatoModel.findById(id);
+    return contato;
+}
+
+Contato.buscaContatos = async function () {
+    const contatos = await ContatoModel.find()
+    .sort({ criadoEm: -1 }); // contatos serão listados em ordem decrescente.
+    return contatos;
 }
 
 module.exports = Contato;
