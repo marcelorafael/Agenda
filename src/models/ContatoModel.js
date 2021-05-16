@@ -15,11 +15,14 @@ const ContatoModel = mongoose.model('Contato', ContatoSchema);
 function Contato(body) {
     this.body = body;
     this.errors = [];
-    this.Contato = null;
+    this.contato = null;
 }
 
-Contato.prototype.register = function () {
+Contato.prototype.register = async function () {
     this.valida();
+
+    if(this.errors.length > 0) return
+    this.contato = await ContatoModel.create(this.body)
 }
 
 Contato.prototype.valida = function() {
@@ -31,7 +34,7 @@ Contato.prototype.valida = function() {
 
     // Campo nome não pode ser vazio
     if(!this.body.nome) this.errors.push('Nome é um campo obrigatório');
-    if(!this.body.email && this.body.telefone) {
+    if(!this.body.email && !this.body.telefone) {
         this.errors.push('PElo menos um contato precisa ser cadastrado: Nome ou E-mail');
     }
 }
@@ -51,10 +54,6 @@ Contato.prototype.cleanUp = function() {
         email: this.body.email,
         telefone: this.body.telefone
     }
-}
-
-class Contato {
-
 }
 
 module.exports = Contato;
