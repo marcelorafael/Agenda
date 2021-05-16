@@ -18,6 +18,12 @@ function Contato(body) {
     this.contato = null;
 }
 
+Contato.buscaPorId = async function(id) {
+    if(typeof id !== 'string') return
+    const contato = await ContatoModel.findById(id);
+    return contato;
+}
+
 Contato.prototype.register = async function () {
     this.valida();
 
@@ -49,7 +55,7 @@ Contato.prototype.cleanUp = function() {
 
 
     this.body = {
-        nome: this.body.nome    ,
+        nome: this.body.nome,
         sobrenome: this.body.sobrenome,
         email: this.body.email,
         telefone: this.body.telefone
