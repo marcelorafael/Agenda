@@ -18,8 +18,8 @@ function Contato(body) {
     this.contato = null;
 }
 
-Contato.buscaPorId = async function(id) {
-    if(typeof id !== 'string') return
+Contato.buscaPorId = async function (id) {
+    if (typeof id !== 'string') return
     const contato = await ContatoModel.findById(id);
     return contato;
 }
@@ -27,11 +27,11 @@ Contato.buscaPorId = async function(id) {
 Contato.prototype.register = async function () {
     this.valida();
 
-    if(this.errors.length > 0) return
+    if (this.errors.length > 0) return
     this.contato = await ContatoModel.create(this.body)
 }
 
-Contato.prototype.valida = function() {
+Contato.prototype.valida = function () {
     this.cleanUp(); // criamos um método
 
     // Validação
@@ -39,13 +39,13 @@ Contato.prototype.valida = function() {
     if (this.body.email && !validator.isEmail(this.body.email)) this.errors.push('E-mail inválido');
 
     // Campo nome não pode ser vazio
-    if(!this.body.nome) this.errors.push('Nome é um campo obrigatório');
-    if(!this.body.email && !this.body.telefone) {
+    if (!this.body.nome) this.errors.push('Nome é um campo obrigatório');
+    if (!this.body.email && !this.body.telefone) {
         this.errors.push('PElo menos um contato precisa ser cadastrado: Nome ou E-mail');
     }
 }
 
-Contato.prototype.cleanUp = function() {
+Contato.prototype.cleanUp = function () {
     for (const key in this.body) {
         if (typeof this.body[key] !== 'string') {
             this.body[key] = '';
@@ -60,6 +60,14 @@ Contato.prototype.cleanUp = function() {
         email: this.body.email,
         telefone: this.body.telefone
     }
+}
+
+Contato.prototype.edit = async function (id) {
+    this.valida();
+    if (typeof id !== 'string') return;
+    
+    if (this.errors.length > 0) return
+    this.contato = await ContatoModel.findByIdAndUpdate(id, this.body, { new: true });
 }
 
 module.exports = Contato;
