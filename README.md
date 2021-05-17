@@ -1,6 +1,7 @@
 # Projeto Agenda
 ## CRUD com NodeJS.
 
+### Tecnologias
 #### . bcryptjs - hash
 #### . nodemon
 #### . MongoDB
