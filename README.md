@@ -5,13 +5,9 @@
 
 
 ### Tecnologias
-#### - NodeJS
-#### - Express
-#### - bcryptjs - hash
-#### - Nodemon
-#### - MongoDB
-#### - Modelo - MVC
-
+#### - NodeJS #### - Express
+#### - bcryptjs(hash) #### - Nodemon
+#### - MongoDB #### - Modelo - MVC
 
 ### Features
 
