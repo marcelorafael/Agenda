@@ -16,5 +16,6 @@
 - [x] Cadastro de contatos
 - [ ] Cadastro de produtos
 - [x] Edição de contatos
-- [ ] Exclusão de contatos
+- [x] Exclusão de contatos
+- [ ] Exclusão de produtos
 - [x] Tabela de exibição de contatos
