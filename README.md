@@ -1,15 +1,17 @@
 # Projeto Agenda
-## CRUD com NodeJS.
-
-### Tecnologias
-#### . bcryptjs - hash
-#### . nodemon
-#### . MongoDB
-#### . Modelo - MVC
-
 <h4 align="center"> 
 	🚧  CRUD NodeJS e MongoDB 🚀 Em construção...  🚧
 </h4>
+
+
+### Tecnologias
+#### - NodeJS
+#### - Express
+#### - bcryptjs - hash
+#### - Nodemon
+#### - MongoDB
+#### - Modelo - MVC
+
 
 ### Features
 
