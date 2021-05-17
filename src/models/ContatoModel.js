@@ -18,17 +18,15 @@ function Contato(body) {
     this.contato = null;
 }
 
-<<<<<<< HEAD
+
 // Métodos estáticos, não acesso o this.
-=======
->>>>>>> 431bcaf13129cd0812a8a8d74dd4385ed7fb0f00
 Contato.buscaPorId = async function (id) {
     if (typeof id !== 'string') return
     const contato = await ContatoModel.findById(id);
     return contato;
 }
 
-<<<<<<< HEAD
+
 Contato.buscaContatos = async function () {
     const contatos = await ContatoModel.find()
         .sort({ criadoEm: -1 })
@@ -41,8 +39,7 @@ Contato.delete = async function (id) {
 }
 
 // Métodos não estáticos
-=======
->>>>>>> 431bcaf13129cd0812a8a8d74dd4385ed7fb0f00
+
 Contato.prototype.register = async function () {
     this.valida();
 
@@ -84,11 +81,6 @@ Contato.prototype.cleanUp = function () {
 Contato.prototype.edit = async function (id) {
     this.valida();
     if (typeof id !== 'string') return;
-<<<<<<< HEAD
-
-=======
-    
->>>>>>> 431bcaf13129cd0812a8a8d74dd4385ed7fb0f00
     if (this.errors.length > 0) return
     this.contato = await ContatoModel.findByIdAndUpdate(id, this.body, { new: true });
 }

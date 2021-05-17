@@ -22,10 +22,9 @@ route.get('/login/logout', loginController.logout)
 route.get('/contato', loginRequired, contatoController.index)
 route.get('/contato/:id', loginRequired, contatoController.editIndex)
 route.post('/contato/edit/:id', loginRequired, contatoController.edit)
-<<<<<<< HEAD
+
 route.get('/contato/delete/:id', loginRequired, contatoController.delete)
-=======
->>>>>>> 431bcaf13129cd0812a8a8d74dd4385ed7fb0f00
+
 route.post('/contato/register', loginRequired, contatoController.register)
 
 module.exports = route;
