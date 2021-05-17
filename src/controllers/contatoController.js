@@ -55,6 +55,7 @@ exports.edit = async (req, res) => {
        console.log(error)
        res.render('404')
    }
+<<<<<<< HEAD
 }
 
 exports.delete = async (req, res) => {
@@ -67,4 +68,6 @@ exports.delete = async (req, res) => {
     req.flash('success', 'Contato apagado com sucesso');
     req.session.save(() => res.redirect(`/`))
     return;
+=======
+>>>>>>> 431bcaf13129cd0812a8a8d74dd4385ed7fb0f00
 }
