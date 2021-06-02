@@ -12,6 +12,8 @@
 <h4> - MongoDB </h4> 
 <h4> - Modelo - MVC </h4>
 
+<img src="https://github.com/marcelorafael/Agenda/blob/master/Agenda.gif" width="1000" height="600" />
+
 ### Features
 
 - [x] Cadastro de usuário
